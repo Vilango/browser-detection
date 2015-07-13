@@ -1,5 +1,7 @@
 Package.describe({
-    summary: "Meteorite package that provides browser detection."
+  name: "vilango:browser-detection",
+  summary: "Meteorite package that provides browser detection.",
+  version: "1.0.4"
 });
 
 Package.on_use(function (api) {
