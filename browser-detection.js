@@ -5,6 +5,7 @@ BrowserDetect = {
             || this.searchVersion(navigator.appVersion)
             || "an unknown version";
         this.OS = this.searchString(this.dataOS) || "an unknown OS";
+        this.bit = this.searchString(this.dataBit) || "x32";
     },
     searchString: function (data) {
         for (var i=0;i<data.length;i++)	{
@@ -126,7 +127,24 @@ BrowserDetect = {
             subString: "Linux",
             identity: "Linux"
         }
-    ]
-
+    ],
+    dataBit : [
+		{
+			string: navigator.userAgent,
+			subString: "Win64",
+			identity: "x64"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "WOW64",
+			identity: "x64"
+		},
+        {
+            string: navigator.platform,
+            subString: "MacIntel",
+            identity: "x64"
+        }
+	]
 };
+
 BrowserDetect.init();
